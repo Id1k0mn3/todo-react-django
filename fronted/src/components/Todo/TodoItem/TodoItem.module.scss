@@ -1,0 +1,60 @@
+.todo-item {
+  $this: &;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 1rem;
+  background: #282121;
+  padding: 1rem;
+  border-radius: 1rem;
+  transition: .3s;
+  border: 2px solid #282121;
+
+  &:hover {
+    background: #fff;
+
+    #{$this}__text {
+      color: #282121;
+    }
+  }
+
+  &__information {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    flex-wrap: wrap;
+  }
+
+  &__text {
+    color: #fff;
+    font-size: .875rem;
+    font-family: Consolas, "Courier New", Courier;
+    transition: .3s;
+  }
+
+  &__description {
+    @extend #{$this}__text;
+
+    width: 100%;
+  }
+
+  &__actions {
+    display: flex;
+    column-gap: .5rem;
+  }
+
+  &__button {
+    padding: .5rem;
+    background: #fff;
+    border: 1px solid #282121;
+    border-radius: .5rem;
+    transition: .3s;
+    cursor: pointer;
+
+    &:hover {
+      border-color: #fff;
+      transition: .3s;
+    }
+  }
+}
